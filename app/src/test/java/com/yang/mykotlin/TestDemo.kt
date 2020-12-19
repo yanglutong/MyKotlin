@@ -7,6 +7,8 @@ package com.yang.mykotlin
 fun main() {
     println("杨路通")
 
+    var jsonClass=TestDemo.JsonClass()
+    jsonClass.hide()
 
     //类型之间的转换
     var a1:Int=1
@@ -36,6 +38,7 @@ fun main() {
 }
 //测试类
 class TestDemo {
+
     //Kotlin定义数据类型前必须先进行赋值
     var a:Int = 0
     //lateinit 是用在引用类型上 加上lateinit可以延迟初始化，但在调用这个对象时必须初始化赋值否则会报错
@@ -78,6 +81,28 @@ class TestDemo {
         //将boolean值输出打印
         filter.forEach {
             println(it)
+        }
+    }
+
+    class JsonClass:Du{
+        var de:Int=15
+        var de2:String="123"
+
+        fun hide(){
+            var i=size(de,de2 .toInt())
+            println(i)
+        }
+    }
+    //父类
+    open class Teacher(gs:Int,array:ArrayList<String>){
+
+    }
+//    class Student(a:Int,b:String):Teacher(5,arr){
+        
+//    }
+    interface Du{
+        fun size(a:Int,b:Int):Int{
+            return if(a+b>5) a else b
         }
     }
 }
