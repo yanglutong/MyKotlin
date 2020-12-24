@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="#EEEEEE"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.HomeFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="#03A9F4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:background="@drawable/home_header_corner_bg"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                    <ImageView
+                        android:layout_weight="5"
+                        android:id="@+id/image"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></ImageView>
+
+                    <EditText
+                        android:id="@+id/edt_tool_search"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="80"
+                        android:background="@null"
+                        android:hint="搜索商品/品类"
+                        android:textColorHint="@android:color/white"
+                        android:textColor="@android:color/white"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:singleLine="true"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/title_scan"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/icon_scan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></ImageView>
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+        </com.youth.banner.Banner>
+        <LinearLayout
+            android:layout_marginTop="7dp"
+            android:id="@+id/re"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/corner_news_bg"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="wrap_content">
+            </TextView>
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/icon_news"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </ImageView>
+            <View
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/colorPrimary"
+                android:layout_marginBottom="3dp"
+                android:layout_width="1dp"
+                android:layout_height="match_parent">
+            </View>
+            <com.xj.marqueeview.MarqueeView
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingBottom="1dp"
+                android:id="@+id/tvMarqueeView"
+                app:mvAnimDuration="500"
+                app:mvDirection="bottom_to_top"
+                app:mvInterval="3000"
+                android:layout_width="match_parent"
+                android:layout_height="20dp">
+            </com.xj.marqueeview.MarqueeView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="7dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/re">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp"
+                android:drawableLeft="@drawable/icon_special"
+                android:paddingLeft="5dp"
+                android:text="\u3000火爆进行中"
+                android:textColor="@color/black"></TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/HomeRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"></androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+        <RelativeLayout
+            android:background="@drawable/home_container_bg"
+            app:layout_constraintTop_toBottomOf="@id/linearLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <me.crosswall.lib.coverflow.core.PagerContainer
+                android:id="@+id/mTopicContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/home_container_bg">
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/mTopicPager"
+                android:layout_gravity="center"
+                android:layout_width="200.0dip"
+                android:layout_height="160.0dip"
+                android:overScrollMode="never"/>
+            </me.crosswall.lib.coverflow.core.PagerContainer>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

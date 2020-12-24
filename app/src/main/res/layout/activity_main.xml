@@ -1,19 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/my_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.MainActivity">
+        <RelativeLayout
+            android:id="@+id/rl"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            >
+        </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <RelativeLayout
+            android:background="@android:color/white"
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <View
+                android:id="@+id/view"
+                android:background="@drawable/home_view_shape"
+                android:layout_width="match_parent"
+                android:layout_height="2dp">
+            </View>
+            <RadioGroup
+                android:layout_marginBottom="6dp"
+                android:layout_marginTop="6dp"
+                android:layout_below="@+id/view"
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_home"
+                    style="@style/HomeRadio"
+                    android:drawableTop="@drawable/home_radiobutton_home"
+                    android:text="主页"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radio_classify"
+                    style="@style/HomeRadio"
+                    android:drawableTop="@drawable/home_radiobutton_classify"
+                    android:text="分类"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radio_shoppingCart"
+                    android:drawableTop="@drawable/home_radiobutton_shoppingcart"
+                    style="@style/HomeRadio"
+                    android:text="购物车"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radio_message"
+                    android:drawableTop="@drawable/home_radiobutton_message"
+                    style="@style/HomeRadio"
+                    android:text="消息"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/radio_my"
+                    android:drawableTop="@drawable/home_radiobutton_my"
+                    style="@style/HomeRadio"
+                    android:text="我的"></RadioButton>
+            </RadioGroup>
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
