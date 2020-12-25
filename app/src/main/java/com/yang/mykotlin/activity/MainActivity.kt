@@ -60,7 +60,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             .commit()
 
         dataBingView.radioHome.setOnClickListener {
-            Toast.makeText(this, "这是首页", Toast.LENGTH_SHORT).show()
             val beginTransaction1 = supportFragmentManager.beginTransaction()
 
             for(index in 0 until mutableList.size){
@@ -74,7 +73,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         }
         dataBingView.radioClassify.setOnClickListener {
-            Toast.makeText(this, "这是分类", Toast.LENGTH_SHORT).show()
             val beginTransaction2 = supportFragmentManager.beginTransaction()
 
             for(index in 0 until mutableList.size){
@@ -87,7 +85,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             beginTransaction2.commit()
         }
         dataBingView.radioShoppingCart.setOnClickListener {
-            Toast.makeText(this, "这是购物车", Toast.LENGTH_SHORT).show()
             val beginTransaction3 = supportFragmentManager.beginTransaction()
 
             for(index in 0 until mutableList.size){
@@ -100,7 +97,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             beginTransaction3.commit()
         }
         dataBingView.radioMessage.setOnClickListener {
-            Toast.makeText(this, "这是消息界面", Toast.LENGTH_SHORT).show()
             val beginTransaction4 = supportFragmentManager.beginTransaction()
 
             for(index in 0 until mutableList.size){
@@ -113,7 +109,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             beginTransaction4.commit()
         }
         dataBingView.radioMy.setOnClickListener {
-            Toast.makeText(this, "这是我的", Toast.LENGTH_SHORT).show()
             val beginTransaction5 = supportFragmentManager.beginTransaction()
 
             for(index in 0 until mutableList.size){
@@ -141,7 +136,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         val result =
             IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
         if (result != null) {
-            Toast.makeText(this, "进来了", Toast.LENGTH_SHORT).show()
             Log.i("TAG", "onActivityResult: " + "进来了")
             if (result.contents == null) {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()

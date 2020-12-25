@@ -32,3 +32,6 @@ const val HOME_TOPIC_THREE = "https://timgsa.baidu.com/timg?image&quality=80&siz
 const val HOME_TOPIC_FOUR = "http://img.zcool.cn/community/01796c58772f66a801219c77e4fc04.png@1280w_1l_2o_100sh.png"
 const val HOME_TOPIC_FIVE = "http://img.zcool.cn/community/0154805791ffeb0000012e7edba495.jpg@900w_1l_2o_100sh.jpg"
 
+
+//本地服务器地址
+const val SERVER_ADDRESS = "http://192.168.0.187:8080/kotlin/"
